@@ -92,10 +92,10 @@
 
 <hr><h2>Online example:</h1>
 
-<textarea id="editor1" name="editor1">Initial value.</textarea>
+<textarea id="editor1" name="editor1">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
 
 <h3>Result in a plain div-container:</h3>
-<div id="resarea">Initial value.</div>
+<div id="resarea">&lt;p&gt;Initial value.&lt;/p&gt;</div>
 
 <hr><h1>TODO:</h1>
 

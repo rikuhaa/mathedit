@@ -1,0 +1,29 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="mathquill.css" />
+	<script src="jquery.min.js"></script>
+	<script src="mathquill.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+</head>
+<body>
+<textarea id="editor1" name="editor1">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
+<div id="resarea">result</div>
+<script>
+    window.onload = function() {
+		var updateDiv = function() {
+			var editorText = CKEDITOR.instances.editor1.getData();
+			$('#resarea').html(editorText);
+		};
+        CKEDITOR.replace( 'editor1', {
+			toolbar : [
+				{ name: 'basicstyles', items: [ 'Bold', 'Italic' ] },
+				{ name: 'math', items: ['mathedit'] },
+			],
+			extraPlugins : 'mathedit,onchange',
+			disableObjectResizing : true
+		});
+		CKEDITOR.instances.editor1.on('change', updateDiv);
+    };
+</script>
+</body>
+</html>
