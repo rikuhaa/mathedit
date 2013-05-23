@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Mathedit by rikuhaavisto</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/rikuhaavisto/mathedit">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Mathedit</h1>
+            <h2>Math-Edit plugin for CKEditor</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/rikuhaavisto/mathedit/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/rikuhaavisto/mathedit/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>Math-Edit plugin for CKEditor</h1>
+
+<p>A Math editor plugin for CKEditor.</p>
+
+<p>Uses MathQuill to ( <a href="http://mathquill.com/">http://mathquill.com/</a> ) to provide a editable WYSIWYG-latex field in a CKEditor-dialog and CodeCogs ( <a href="http://www.codecogs.com/">http://www.codecogs.com/</a> ) to generate pictures from the latex values.</p>
+
+<p>Original icon by David Vignoni ( <a href="http://icones.pro/en/edu-mathematics-png-image.html">http://icones.pro/en/edu-mathematics-png-image.html</a> ) and licensed under LGPL.</p>
+
+<p>Implementation is inspired by Vaadin-RichMathArea ( <a href="https://github.com/ripla/VMathQuill">https://github.com/ripla/VMathQuill</a> ) and CodeCogs Equation Editor CKEditor -plugin ( <a href="http://ckeditor.com/addon/equation">http://ckeditor.com/addon/equation</a> ). The main difference between this plugin and the 'original' CodeCogs plugin is that this plugin aims to integrate more smoothly with CKEditor.</p>
+
+<p>Special thanks also to creators of the great CKEditor -plugin tutorials: <a href="http://docs.cksource.com/CKEditor_3.x/Tutorials/Abbr_Plugin_Part_1">http://docs.cksource.com/CKEditor_3.x/Tutorials/Abbr_Plugin_Part_1</a> and <a href="http://docs.cksource.com/CKEditor_3.x/Tutorials/Abbr_Plugin_Part_2">http://docs.cksource.com/CKEditor_3.x/Tutorials/Abbr_Plugin_Part_2</a></p>
+
+<p>Author: Riku Haavisto License: GPL, LGPL and MPL</p>
+
+<hr><h1>USAGE:</h1>
+
+<p>Requires CKEditor, JQuery and MathQuill</p>
+
+<p>Add plugin folder (mathedit) to CKEditor's plugins-folder and add mathedit to CKEditor's config.extraplugins</p>
+
+<p>This will add a 'mathedit' button to your CKEditor's toolbar (if you have not limited which buttons are shown) that you can use to open a dialog for editing latex with MathQuill. When click 'ok' on the dialog the edited latex will be rendered to a gif-image by CodeCogs and added to the cursor position in your CKEditor. You can further edit the math-value by right-clicking on it and choosing math-editor from the context-menu or by double-clicking on it.</p>
+
+<hr><h1>EXAMPLE:</h1>
+
+<p>A simple test-installation including all the needed dependencies can be found in 'test'-folder. You should be able to run it by simple opening 'test/test.html' in a browser (won't probably open in IE though without little changes).</p>
+
+<hr><h1>TODO:</h1>
+
+<pre><code>the MathQuill-text field should be styled to stand out more
+integrating a visual latex-toolbar be a good idea
+</code></pre>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/rikuhaavisto">rikuhaavisto</a> can be found on <a href="https://github.com/rikuhaavisto/mathedit">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
