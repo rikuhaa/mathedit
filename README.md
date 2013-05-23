@@ -48,3 +48,10 @@ EXAMPLE:
 A simple test-installation including all the needed dependencies can be found in 
 'test'-folder. You should be able to run it by simple opening 'test/test.html' 
 in a browser (won't probably open in IE though without little changes).
+
+*****
+
+TODO:
+
+- the MathQuill-text field should be styled to stand out more
+- integrating a visual latex-toolbar be a good idea
