@@ -40,3 +40,11 @@ latex with MathQuill. When click 'ok' on the dialog the edited latex will be
 rendered to a gif-image by CodeCogs and added to the cursor position in your 
 CKEditor. You can further edit the math-value by right-clicking on it and 
 choosing math-editor from the context-menu or by double-clicking on it.
+
+*****
+
+EXAMPLE:
+
+A simple test-installation including all the needed dependencies can be found in 
+'test'-folder. You should be able to run it by simple opening 'test/test.html' 
+in a browser (won't probably open in IE though without little changes).
