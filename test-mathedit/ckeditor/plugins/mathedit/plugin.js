@@ -26,13 +26,18 @@
 var pluginName = 'mathedit',
 	pluginCmd = 'matheditDialog',
 	inputFieldId = 'mathedit-latex-input-field',
-	mathImgClass = 'mathImg';
+	mathImgClass = 'mathImg',
+	runningId = 0;
 CKEDITOR.plugins.add( pluginName, {
 	init: function ( editor ) {
 		var iconPath = this.path + 'icons/mathedit.png';
 		// register dialog-command
 		editor.addCommand( pluginCmd, 
-			new CKEDITOR.dialogCommand(pluginCmd));
+			new CKEDITOR.dialogCommand(pluginCmd, {
+			// basic ACF-integration
+			allowedContent: 'img[src,title,class](mathImg)',
+			requiredContent: 'img[src,title,class](mathImg)'
+		}));
 		editor.ui.addButton( pluginName, {
 			label : 'Insert math',
 			command : pluginCmd,
@@ -81,6 +86,8 @@ CKEDITOR.plugins.add( pluginName, {
 		// TODO: this could maybe look better; also integrating a latex-toolbar would be useful
 		CKEDITOR.dialog.add( pluginCmd, function( editor )
 		{
+			var currId = inputFieldId + "-" + runningId;
+			runningId += 1;
 			return {
 				title : 'Add Math',
 				minWidth : 400,
@@ -99,7 +106,8 @@ CKEDITOR.plugins.add( pluginName, {
 								// to required element
 								// TODO: some other solution than hard-coded id?
 								type : 'html',
-								html : "<span id='" + inputFieldId + "'></span>" + 
+								html : "<span id='" + currId + "' style='border: 1px solid gray;" +
+    								"padding: 2px;'></span>" + 
 									"<div style='float: right; padding-top: 10px;'>" +
 									"<a href='http://www.codecogs.com/' style='cursor: " +
 									"pointer; font-size: smaller; color:#085585' " +
@@ -109,12 +117,12 @@ CKEDITOR.plugins.add( pluginName, {
 									"</div>",
 								setup : function( image ) {
 									// $ accesses the actual DOM-element
-									var dialEl = jQuery(CKEDITOR.document.getById(inputFieldId).$);
+									var dialEl = jQuery(CKEDITOR.document.getById(currId).$);
 									dialEl.mathquill('editable');
 									dialEl.mathquill('latex', image.getAttribute('title'));
 								},
 								commit : function ( image ) {
-									var dialEl = jQuery(CKEDITOR.document.getById(inputFieldId).$), 
+									var dialEl = jQuery(CKEDITOR.document.getById(currId).$), 
 										url='http://latex.codecogs.com/gif.latex?',
 										latex = '';
 									latex = dialEl.mathquill('latex');
